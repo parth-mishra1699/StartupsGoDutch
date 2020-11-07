@@ -1,0 +1,98 @@
+.hero {
+    background-color: $veryLightGray;
+
+    .container {
+        @include breakpoint-up(large){
+            display: flex;
+            align-items: center;
+            }
+    }
+   
+// Hero waali fotu idhar dalna hai
+    &__image{
+        position: relative;
+        background-image: url('/images/bg-intro-mobile.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+
+        @include breakpoint-up(medium){
+            min-height:25rem ;
+            background-position:center 60% ;
+        }
+
+
+        @include breakpoint-up(large){
+            flex: 3 ;
+            order: 2; 
+            min-height: 41rem ;
+            background-image: none;
+           // background-image: url('/images/bg-intro-desktop.svg');
+           // background-position: left center;
+
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+             //background-image: url('/images/image-mockups.png');
+            background-image: url('/images/5278.png');
+            background-size: 93%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+
+            @include breakpoint-up(medium){
+                background-size: 52%;
+            }
+
+            @include breakpoint-up(large){
+                width: 100%;
+                height: 79%;
+                background-size: 104%;
+                background-position: center 150%;
+                left: 2%;
+            }
+        }
+
+        &::before{
+
+           
+           
+            @include breakpoint-up(large){
+                content: "";
+                position: absolute;
+                height: 100%;
+                background-image: url('/images/bg-intro-desktop.svg');
+                //background-size: 93%;
+                background-repeat: no-repeat;
+                background-position: center bottom;    
+                width: 150%;
+                background-size: 122%;
+                background-position: 0% 83%;
+            }
+        }
+    }
+
+    &__text{
+        text-align: center;
+
+        @include breakpoint-up(large){
+            flex: 2 ;
+            order: 1; 
+            text-align: left;
+        }
+
+    
+
+    }
+
+    &__cta{
+        width: 60%;
+        margin-bottom: 10px;
+        display: inline-block;
+        justify-content: space-between;
+        text-align: center;
+    }
+}
